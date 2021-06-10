@@ -40,7 +40,7 @@ The plugin includes the Plausible tracking script. It supports using a custom do
          options: {
            domain: `your-site.com`,
            proxyScript: `/sub-directory/script.js`,
-           proxyApi: `sub-directory/api/event`,
+           proxyApi: `/sub-directory/api/event`,
          },
        },
      ],
