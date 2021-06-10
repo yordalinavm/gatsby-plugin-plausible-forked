@@ -68,8 +68,11 @@ _NOTE: By default, this plugin only generates output when run in production mode
 | Option         | Explanation                                            |
 | -------------- | ------------------------------------------------------ |
 | `domain`       | The domain configured in Plausible (required)          |
+| `api`          | An collection endpoint for proxy configurations        |
 | `customDomain` | Custom domain (if configured in Plausible's dashboard) |
 | `excludePaths` | Array of pathnames where page views will not be sent   |
+
+_NOTE: You can [read more about proxying Plausible here](https://plausible.io/docs/proxy/introduction)
 
 ### Pageview events
 

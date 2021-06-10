@@ -5,6 +5,7 @@ const getOptions = (pluginOptions) => {
   const scriptURI =
     plausibleDomain === 'plausible.io' ? '/js/plausible.js' : '/js/index.js';
   const domain = pluginOptions.domain;
+  const api = pluginOptions.api;
   const excludePaths = pluginOptions.excludePaths || [];
   const trackAcquisition = pluginOptions.trackAcquisition || false;
 
@@ -41,6 +42,9 @@ exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
     };
     if (trackAcquisition) {
       scriptProps['data-track-acquisition'] = true;
+    }
+    if (api) {
+      scriptProps['data-api'] = api;
     }
 
     return setHeadComponents([
