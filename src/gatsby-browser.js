@@ -1,8 +1,5 @@
 exports.onRouteUpdate = function ({ location }) {
-  if (
-    process.env.NODE_ENV === `production` &&
-    typeof window.plausible === `object`
-  ) {
+  if (typeof window.plausible === `object`) {
     const pathIsExcluded =
       location &&
       typeof window.plausibleExcludePaths !== `undefined` &&

@@ -4,9 +4,9 @@ const getOptions = (pluginOptions) => {
   const plausibleDomain = pluginOptions.customDomain || 'plausible.io';
   const scriptURI =
     plausibleDomain === 'plausible.io' ? '/js/plausible.js' : '/js/index.js';
-  const domain = pluginOptions.domain;
-  const proxyScript = pluginOptions.proxyDomain;
-  const proxyApi = pluginOptions.proxyApi;
+  const domain = pluginOptions.domain || false;
+  const proxyScript = pluginOptions.proxyScript || false;
+  const proxyApi = pluginOptions.proxyApi || false;
   const excludePaths = pluginOptions.excludePaths || [];
   const trackAcquisition = pluginOptions.trackAcquisition || false;
 
@@ -22,7 +22,7 @@ const getOptions = (pluginOptions) => {
 };
 
 exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
-  if (process.env.NODE_ENV === 'production') {
+  if (true) {
     const {
       plausibleDomain,
       scriptURI,
@@ -42,14 +42,14 @@ exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
     const scriptProps = {
       async: true,
       defer: true,
-      'data-domain': domain,
+      domain: domain,
       src: proxyScript || `https://${plausibleDomain}${scriptURI}`,
     };
     if (trackAcquisition) {
       scriptProps['data-track-acquisition'] = true;
     }
     if (proxyApi) {
-      scriptProps['data-api'] = api;
+      scriptProps['data-api'] = proxyApi;
     }
 
     return setHeadComponents([

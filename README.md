@@ -1,4 +1,6 @@
-# gatsby-plugin-plausible
+# @devular/gatsby-plugin-plausible
+
+This plugin was forked from [pixelplicity/gatsby-plugin-plausible](https://github.com/pixelplicity/gatsby-plugin-plausible) to support Plausible's proxying configuration.
 
 [![npm package](https://flat.badgen.net/npm/v/gatsby-plugin-plausible)](https://badgen.net/npm/v/gatsby-plugin-plausible)
 
@@ -22,9 +24,9 @@ The plugin includes the Plausible tracking script. It supports using a custom do
 
 ### Manual
 
-1. Install `gatsby-plugin-plausible`
+1. Install `@devular.gatsby-plugin-plausible`
 
-   `npm install --save gatsby-plugin-plausible`
+   `npm install --save @devular/gatsby-plugin-plausible`
 
 2. Add plugin to `gatsby-config.js`
 
@@ -34,9 +36,11 @@ The plugin includes the Plausible tracking script. It supports using a custom do
      plugins: [
        // The only required option is the domain
        {
-         resolve: `gatsby-plugin-plausible`,
+         resolve: `@devular/gatsby-plugin-plausible`,
          options: {
-           domain: `aquil.io`,
+           domain: `your-site.com`,
+           proxyScript: `/sub-directory/script.js`,
+           proxyApi: `sub-directory/api/event`,
          },
        },
      ],
@@ -45,7 +49,7 @@ The plugin includes the Plausible tracking script. It supports using a custom do
 
 ### Gatsby Recipe
 
-This will install `gatsby-plugin-plausible` and add a sample configuration.
+This will install `@devular/gatsby-plugin-plausible` and add a sample configuration.
 
 1. Upgrade gatsby-cli and gatsby to the latest version:
 
@@ -53,7 +57,7 @@ This will install `gatsby-plugin-plausible` and add a sample configuration.
    `npm install gatsby@latest`
 
 2. Run the recipe
-   `gatsby recipes https://raw.githubusercontent.com/Aquilio/gatsby-plugin-plausible/master/gatsby-recipe-plausible.mdx`
+   `gatsby recipes https://raw.githubusercontent.com/devular/gatsby-plugin-plausible/master/gatsby-recipe-plausible.mdx`
 
 3. Update `gatsby-config.js` [options](#options).
 
@@ -65,15 +69,14 @@ _NOTE: By default, this plugin only generates output when run in production mode
 
 ### Options
 
-| Option         | Explanation                                            |
-| -------------- | ------------------------------------------------------ |
-| `domain`       | The domain configured in Plausible (required)          |
-| `proxyScript`  | A script location for a proxy configuration            |
-| `proxyApi`     | An collection endpoint for aproxy configurations       |
-| `customDomain` | Custom domain (if configured in Plausible's dashboard) |
-| `excludePaths` | Array of pathnames where page views will not be sent   |
+| Option         | Explanation                                          |
+| -------------- | ---------------------------------------------------- |
+| `domain`       | The domain configured in Plausible (required)        |
+| `proxyScript`  | A script location for a proxy configuration          |
+| `proxyApi`     | An collection endpoint for aproxy configurations     |
+| `excludePaths` | Array of pathnames where page views will not be sent |
 
-_NOTE: You can [read more about proxying Plausible here](https://plausible.io/docs/proxy/introduction)
+\_NOTE: You can [read more about proxying Plausible here](https://plausible.io/docs/proxy/introduction)
 
 ### Pageview events
 
@@ -99,4 +102,6 @@ See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
-[MIT](https://github.com/pixelplicity/gatsby-plugin-plausible/blob/master/LICENSE) © [Pixelplicity](https://github.com/pixelplicity)
+[MIT](https://github.com/devular/gatsby-plugin-plausible/blob/master/LICENSE) | [Devular](https://devular.com)
+
+Forked from: https://github.com/pixelplicity/gatsby-plugin-plausible with [MIT](https://github.com/pixelplicity/gatsby-plugin-plausible/blob/master/LICENSE)

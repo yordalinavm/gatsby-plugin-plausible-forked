@@ -1,12 +1,12 @@
 {
-  "name": "gatsby-plugin-plausible",
+  "name": "@devular/gatsby-plugin-plausible",
   "description": "A Gatsby plugin for adding Plausible analytics to your Gatsby site",
   "version": "0.1.7",
-  "author": "Curtis Cummings <curtis@pixelplicity.com>",
+  "author": "Jonathon Sherrard <jon@devular.com>, Curtis Cummings <curtis@pixelplicity.com>",
   "license": "MIT",
-  "repository": "pixelplicity/gatsby-plugin-plausible",
+  "repository": "devular/gatsby-plugin-plausible",
   "bugs": {
-    "url": "https://github.com/pixelplicity/gatsby-plugin-plausible/issues"
+    "url": "https://github.com/devular/gatsby-plugin-plausible/issues"
   },
   "main": "index.js",
   "keywords": [
@@ -26,8 +26,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.9.2",
-    "react": "^16.13.1",
-    "minimatch": "3.0.4"
+    "minimatch": "3.0.4",
+    "react": ">=16.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
