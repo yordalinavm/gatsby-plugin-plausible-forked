@@ -22,7 +22,7 @@ const getOptions = (pluginOptions) => {
 };
 
 exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
-  if (true) {
+  if (process.env.NODE_ENV === 'production') {
     const {
       plausibleDomain,
       scriptURI,
@@ -53,11 +53,13 @@ exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
     }
 
     return setHeadComponents([
-      <link
-        key="gatsby-plugin-plausible-preconnect"
-        rel="preconnect"
-        href={`https://${plausibleDomain}`}
-      />,
+      proxyScript ? null : (
+        <link
+          key="gatsby-plugin-plausible-preconnect"
+          rel="preconnect"
+          href={`https://${plausibleDomain}`}
+        />
+      ),
       <script key="gatsby-plugin-plausible-script" {...scriptProps}></script>,
       //See: https://docs.plausible.io/goals-and-conversions#trigger-custom-events-with-javascript
       <script

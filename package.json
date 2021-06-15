@@ -1,7 +1,7 @@
 {
   "name": "@devular/gatsby-plugin-plausible",
   "description": "A Gatsby plugin for adding Plausible analytics to your Gatsby site",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": "Jonathon Sherrard <jon@devular.com>, Curtis Cummings <curtis@pixelplicity.com>",
   "license": "MIT",
   "repository": "devular/gatsby-plugin-plausible",
